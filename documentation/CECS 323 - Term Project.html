@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>CECS 323 - Term Project</title>
+  <link rel="stylesheet" href="../courses.css" type="text/css">
+</head>
+<body>
+
+<p><a NAME="top"></a></p>
+
+<table WIDTH="100%" BORDER="0" CELLPADDING="8" CELLSPACING="0">
+  <tr>
+    <td class=left WIDTH="15%" VALIGN="TOP" >CSU Long Beach<br>
+    <b><font SIZE="+2">CECS 323<br>
+    </font>Database Fundamentals</b><br>
+    <hr noshade size="1">
+
+    <p><a HREF="index.shtml">Syllabus</a><br>
+    <a HREF="sked.shtml">Schedule</a><br>
+    <a HREF="grading.shtml">Grading</a><br>
+      <a HREF="examples.shtml">Examples</a><br>
+            <a HREF="labinfo.shtml">Lab Info</a><br>
+
+    <a HREF="modelingrules.shtml">Modeling Rules</a><br>
+
+    <a HREF="http://www.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php">Textbook</a><br>
+    <!--a HREF="bookxref.shtml">Lab Book Readings</a><br>-->
+    <a HREF="http://www.w3schools.com/sql/default.asp">SQL Tutorial</a><br>
+    <a HREF="http://www.tutorialspoint.com/jdbc/">JDBC Tutorial</a><br>
+    <!--a HREF="http://www.iselfschooling.com/mcd12_ora10g/Oracle_SQL_Syntax.htm">Oracle 10g SQL Syntax</a><br>
+    <a HREF="http://www.techonthenet.com/oracle">Oracle Topics</a><br-->
+    <a HREF=
+http://www.cs.iit.edu/~cs561/cs425/algebra/home.html>Relation Algebra Tutorial<br>
+    <!--a href="http://www.cecs.csulb.edu/%7emonge/classes/share/05-RA-and-SQL-operation-matrix.pdf">Relational Algebra Cheat Sheet</a><br>
+  <<a HREF="termproject.shtml">Term Project</a><br>
+
+    <!--a HREF="projectips.shtml">Project Tips</a><br-->
+    <a HREF="dbdb.shtml">Database Games</a><br>
+
+<a href=cecs323.ppt>Lecture Notes</a><br>
+<a href=jdbctermproject.shtml>JDBC Project</a><br>
+<a href=termproject.shtml>Term Project</a><br>
+ <a HREF="TermProjectForm.docx">Term Project Form</a><br>
+
+
+
+
+
+    <br>
+    <hr noshade size="1">
+    <a Href=../index.shtml>Mimi Opkins Home</a>
+    <br>
+  <a href=../cecs277/index.shtml>CECS 277 Home</a>
+    <br>
+<a href=../cecs470/index.html>CECS 470 Home</a>
+    <br>
+
+    </font></td>
+    <td class=right VALIGN="TOP">
+
+
+
+<h2>Term Project</h2>
+<h3>Project Description</h3>
+<ul>
+You are designing a database for Mimi’s GetWell Hospital.
+<p>
+As a large service organization, Mimi’s GetWell Hospital depends on
+a large number of persons for its continued success. There are four groups of
+people on whom the hospital is most dependent: employees, physicians,
+patients and volunteers. Of course some common attributes are shared by all
+of these persons such as birthdates and contact information.
+<br>Each of the four groups has at least one unique
+attribute of its own. Employees have a hire date and volunteers have a Skill,
+Physicians have a Specialty and Pager#, and patients have a contact date.
+<br>
+Additional personnel in the hospital community do not belong to one of these
+four groups (their numbers are relatively small). However, a particular person
+may belong to two (or more) of these groups at any given time (for example,
+Patient and Volunteer).
+<p>Each patient has one (and only one) physician responsible for that patient. A
+given physician may not be responsible for a patient at a given time or may be
+responsible for one or more patients. Patients are divided into two groups:
+resident and outpatient. Each resident has an admitted date attribute. Each
+outpatient is scheduled for zero or more visits. The class visit has two
+attributes: Visit Date and Comments. Notice that an instance of
+visit cannot exist without an outpatient owner class.
+<p>Employees are subdivided into three groups: nurse, staff, and technician. Only
+nurses have the attribute Certificate, which indicates the qualification. Only
+staff has the attribute job class, and only technicians have the attribute
+skill. Each nurse is assigned to one (and only one) care center. Examples of
+care centers are Maternity, Emergency, and Cardiology. Attributes of the care
+center are Name and Location. A care center may have one or
+more nurses assigned to it. Also for each care center, one nurse
+ is appointed nurse in charge. The nurse in charge does not have to be
+ assigned to that care center. A nurse cannot be
+appointed nurse in charge of a care center unless she or he has an RN
+certificate.
+<p>Each technician is assigned to one or more laboratories. Attributes of
+laboratory include Name and Location. A laboratory must have at
+least one technician assigned to it and may have any number of technicians
+assigned.
+<p>There may be no beds assigned to a care center, or a care center may have
+one or more beds (up to any number) assigned to it. The only attributes of bed
+are Bed# and Room#. Each resident patient must be assigned to a bed. A bed may or
+may not have a resident patient assigned to it at a given time.
+
+.
+
+
+
+
+</ul>
+<h3>Design</h3>
+<ul>
+You need to create five more business rules (other than the one explicitly
+described above) that are likely to be used in a hospital
+environment. Add your rules to the above requirements to be
+implemented.
+Your design must support the requirements of the enterprise stated above along with
+the five business rules you created.
+<p>Model this enterprise using only the information supplied here. Do
+not model any
+processes not mentioned here such as payments, insurance, etc. unless they are part of
+your five business rules.
+
+ </p>
+</ul>
+<h3>Output</h3>
+<ul>
+Output of the database must support the following festures. You do not
+need
+to develop &#8220;pretty&#8221; printed or on-screen reports. You will run the
+views/queries in MySQL Query Browser in the lab.
+  <ul>
+  <li>Use the Create View statement to create the following views:
+  <ol>
+  <li> Employees-Hired: This view returns the First Name, Last
+  Name, and Date Hired of all Hospital Employees.
+  <li> NursesInCharge: This view returns the name of the Nurse
+  in Charge for each Care Center along with the phone
+  number of the Nurse.
+  <li> GoodTechnician: This view returns all the Technicians
+  how have at least one skill.
+  <li> CareCenter-Beds: This view returns the name for each
+  Care Center along with the number of beds that are
+  assigned to patients (occupied beds), the number of beds
+  not assigned to patients (free beds), and the total number
+  of beds.
+  <li>OutPatientsNotVisited: This view returns all OutPatients
+  who have not been visited by a Physician yet.
+  </ol>
+  <li>
+  Create the following Queries. Feel free to use any of the views
+  that you created
+  <ol>
+  <li> For each Job Class list all the staff members belonging to
+  this class.
+  <li> Find all Volunteers who do not have any skills.
+  <li> List all Patients who are also Volunteers at the Hospital.
+  <li> Find each Outpatient who has been visited exactly once.
+  <li> For each Skill list the total number of volunteers and
+  technicians that achieve this skill.
+  <li> Find all Care Centers where every bed is assigned to a
+  Patient (i.e. no beds are available).
+  <li> List all Nurses who have an RN certificate but are not in
+  charge of a Care Center.
+  <li> List all Nurses that are in charge of a Care Center to which
+  they are also assigned.
+  <li> List all Laboratories, where all assigned technicians to that
+  laboratory achieve at least one skill.
+  <li> List all Resident patients that were admitted after the most
+  current employee hire date.
+  <li> Find all Patients who have been admitted within one week
+  of their Contact Date.
+  <li> Find all Outpatients who have not been visited by a
+  Physician within one week of their Contact Date.
+  <li> List all Physicians who have made more than 3 visits on a
+  single day.
+  <li> List all Physicians that are responsible for more
+  Outpatients than Resident Patients.
+  <li> Find each Physician who visited an Outpatient for whom
+  he or she was not responsible for.
+
+    <li>Three more queries that involve the business rules that you added. Feel free to
+    create more views for this.
+    </ol>
+  </ul>
+</ul>
+<h3>Teams</h3>
+
+<ul>This project will be done in teams of four people, whom you may self-select.
+
+
+</ul>
+<h3>Deliverables</h3>
+<ul>
+Your work will be done in two parts with one submission of each part for each team.
+
+See the class schedule for due dates.
+
+
+  <h4>The first part, design, will consist of:</h4>
+  <ul>
+  <li>Your five additional business rules</li>
+    <li>Class diagram. </li>
+    <li>English description of all classes and associations. </li>
+    <li>If you did any denormalization in your design, please include a
+separate paragraph(s) stating what you did and why. If you did not do any denormalization, state that and why.</li>
+  </ul>
+  <h4>The second part, implementation, will include:</h4>
+  <ul>
+   <li>A revised design, based on feedback from the first part. This
+   includes
+   class diagrams and English descriptions of classes and associations. </li>
+       <li>English description of all attributes. </li>
+       <li>The relation scheme, based on the design. </li>
+       <li>DDL used to create all the tables and the DML used to insert
+   the data </li>
+<li>Queries to produce the reports, as described above along with sample output for each of these queries. </li>
+
+  </ul>
+</ul>
+    </td>
+  <tr>
+    <td><br></td>
+    <td class=footer>Latest Update: Wednesday, 09-Mar-2016 08:10:56 PST
+                     <br>
+                     <div style="text-indent: 40px">
+                     <a href=mailto:mimi.opkins@csulb.edu >mimi.opkins@csulb.edu</a>
+                     </div>
+    </td>
+  </tr>
+  <tr>
+    <td><br></td>
+    <td class=footer><a href=#top>[Top of Page]</a> </td>
+  </tr>
+
+ </tr>
+
+</table>
+
+</body>
+</html>
