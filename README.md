@@ -1,3 +1,3 @@
 # Mimi-s-Hospital
-![Figure 1-1](documentation/classDiagram.png "Class Diagram")
-![Figure 1-2](documentation/relationalDiagram.png "Relational Diagram")
+![Class Diagram](https://raw.githubusercontent.com/markolo25/Mimi-s-Hospital/master/documentation/documentation/classDiagram.png)
+![Relational Diagram](https://raw.githubusercontent.com/markolo25/Mimi-s-Hospital/master/documentation/documentation/relationalDiagram.png)
